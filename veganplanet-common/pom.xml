@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <groupId>com.veganplanet</groupId>
+        <artifactId>veganplanet-system</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>veganplanet-common</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>veganplanet-common-core</module>
+        <module>veganplanet-common-datasource</module>
+        <module>veganplanet-common-job</module>
+        <module>veganplanet-common-mybatis</module>
+        <module>veganplanet-common-security</module>
+        <module>veganplanet-common-swagger</module>
+        <module>veganplanet-common-file</module>
+        <module>veganplanet-common-feign</module>
+        <module>veganplanet-common-redis</module>
+        <module>veganplanet-common-gateway</module>
+        <module>veganplanet-common-log</module>
+        <module>veganplanet-common-oss</module>
+        <module>veganplanet-common-sentinel</module>
+        <module>veganplanet-common-sequence</module>
+    </modules>
+
+
+</project>
