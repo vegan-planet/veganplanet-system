@@ -1,8 +1,8 @@
 package com.veganplanet.system.config;
 
+import com.veganplanet.common.core.constant.enums.ExceptionStatusEnum;
 import com.veganplanet.common.core.exception.AbstractCustomizedRunTimeException;
 import com.veganplanet.common.core.response.ServiceStatus;
-import com.veganplanet.system.constant.enums.SystemExceptionStatusEnum;
 
 import javax.annotation.Nonnull;
 
@@ -16,7 +16,7 @@ public final class SystemIllegalException extends AbstractCustomizedRunTimeExcep
     private static final long serialVersionUID = 1L;
 
     public SystemIllegalException() {
-        super(SystemExceptionStatusEnum.SYSTEM_SERVICE_ERROR);
+        super(ExceptionStatusEnum.SYSTEM_SERVICE_ERROR);
     }
 
     public SystemIllegalException(@Nonnull ServiceStatus serviceStatus) {
