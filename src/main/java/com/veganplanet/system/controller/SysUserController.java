@@ -3,10 +3,10 @@ package com.veganplanet.system.controller;
 import com.veganplanet.common.core.response.Res;
 import com.veganplanet.system.model.vo.UserVO;
 import com.veganplanet.system.service.UserService;
+import jakarta.annotation.Resource;
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 
-import javax.annotation.Resource;
-import javax.validation.Valid;
 
 
 @RestController
@@ -19,6 +19,7 @@ public class SysUserController {
     @PostMapping("/getUserInfo")
     public Res getUserInfo(@RequestBody @Valid UserVO userVO) {
         System.out.println(userVO.toString());
-        return Res.ok(userService.getUserInfo(userVO.getUserId()));
+        UserVO userInfo = userService.getUserInfo(userVO);
+        return Res.ok(userInfo);
     }
 }

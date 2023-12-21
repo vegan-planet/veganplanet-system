@@ -1,5 +1,7 @@
 package com.veganplanet.system.service;
 
+import com.veganplanet.system.model.vo.UserVO;
+
 /**
  * description
  *
@@ -8,5 +10,5 @@ package com.veganplanet.system.service;
  */
 public interface UserService {
 
-    Integer getUserInfo(Integer userId);
+    UserVO getUserInfo(UserVO userVO);
 }
