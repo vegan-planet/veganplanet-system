@@ -1,4 +1,4 @@
-package com.veganplanet.system.model.vo;
+package com.veganplanet.system.domain.vo;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -17,11 +17,13 @@ import java.io.Serializable;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserVO implements Serializable {
+public class SysUserVO implements Serializable {
     private static final long serialVersionUID = 1L;
-    private Integer userId;
+    private Long userNo;
 
     private String userName;
 
-    private String passWord;
+    private String password;
+
+    private String phone;
 }

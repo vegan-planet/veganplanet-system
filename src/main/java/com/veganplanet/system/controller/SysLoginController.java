@@ -10,19 +10,26 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-
-
+/**
+ * description
+ *
+ * @date 2024/1/15 15:36
+ */
 @RestController
-@RequestMapping("/sysUser")
-public class SysUserController {
+@RequestMapping("/sysLogin")
+public class SysLoginController {
 
     @Resource
-    private SysUserQueryService sysUserService;
+    private SysUserQueryService sysUserQueryService;
 
-
-
-    @PostMapping("/getSysUserInfo")
-    public Res getSysUserInfo(@RequestBody @Valid SysUserVO sysUserVO) {
-        return sysUserService.getSysUserInfo(sysUserVO);
+    /**
+     * <p>登录</p>
+     * @date 2024/1/13 13:29
+     * @param
+     * @return
+     */
+    @PostMapping("/login")
+    public Res login(@RequestBody @Valid SysUserVO userVO) {
+        return sysUserQueryService.login(userVO);
     }
 }
