@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * description
+ * 系统用户管理
  *
  * @date 2024/1/15 15:36
  */
@@ -23,13 +23,13 @@ public class SysLoginController {
     private SysUserQueryService sysUserQueryService;
 
     /**
-     * <p>登录</p>
+     * <p>系统手机号密码登录</p>
      * @date 2024/1/13 13:29
      * @param
      * @return
      */
-    @PostMapping("/login")
-    public Res login(@RequestBody @Valid SysUserVO userVO) {
-        return sysUserQueryService.login(userVO);
+    @PostMapping("/passwordLogin")
+    public Res passwordLogin(@RequestBody @Valid SysUserVO userVO) {
+        return sysUserQueryService.passwordLogin(userVO);
     }
 }

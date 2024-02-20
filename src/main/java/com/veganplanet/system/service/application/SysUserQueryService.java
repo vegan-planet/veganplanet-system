@@ -29,8 +29,18 @@ public class SysUserQueryService {
     private RedisTemplate<String,String> redisTemplate;
     @Resource
     private SysUserService sysUserService;
-    public Res login(SysUserVO sysUserVO) {
+
+    /**
+    * <p>系统手机号密码登录</p>
+    * @date 2024/1/16 22:32
+    * @param
+    * @return
+    */
+    public Res passwordLogin(SysUserVO sysUserVO) {
         SysUser sysUser = sysUserService.getSysUserInfo(sysUserVO);
+        if (Objects.isNull(sysUser)) {
+            return Res.get(ServiceStatus.GET.NOT_FOUND, "未找到该用户");
+        }
         final String password = DigestUtils.md5Hex(sysUserVO.getPassword());
         if (Objects.isNull(sysUser.getPassword()) || !sysUser.getPassword().equals(password)) {
             return Res.get(ServiceStatus.GET.NOT_FOUND, "您输入的手机号或密码不正确");
@@ -38,7 +48,7 @@ public class SysUserQueryService {
             //生成token
             String token = UUID.randomUUID().toString().replaceAll("-", "");
             //把用户信息放到redis里面
-            redisTemplate.opsForValue().set("user:veganplanet:"+token,
+            redisTemplate.opsForValue().set("system:veganplanet:"+token,
                     JSON.toJSONString(sysUser),
                     30, TimeUnit.DAYS);
             return Res.ok(token);
