@@ -24,7 +24,13 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
     public SysUser getSysUserInfo(SysUserVO sysUserVO) {
         LambdaQueryWrapper<SysUser> sysUserLambdaQueryWrapper = new LambdaQueryWrapper<>();
         sysUserLambdaQueryWrapper.eq(Objects.nonNull(sysUserVO.getPhone()),SysUser::getPhone,sysUserVO.getPhone());
+        sysUserLambdaQueryWrapper.eq(Objects.nonNull(sysUserVO.getUserName()),SysUser::getUserName,sysUserVO.getUserName());
         SysUser sysUser = this.getOne(sysUserLambdaQueryWrapper);
         return sysUser;
+    }
+
+    @Override
+    public SysUser getSysUserByUserNo(Long userNo) {
+        return this.getById(userNo);
     }
 }

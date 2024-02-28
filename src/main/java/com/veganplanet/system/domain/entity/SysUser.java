@@ -18,11 +18,11 @@ import java.io.Serializable;
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = false)
 @TableName("sys_user")
-public class SysUser implements Serializable {
+public class SysUser extends BaseEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @TableId(value = "user_no", type = IdType.ASSIGN_ID)
-    private Long userNO;
+    private Long userNo;
     /**
      *用户名
      */
@@ -59,13 +59,5 @@ public class SysUser implements Serializable {
      *小程序openid
      */
     private String miniOpenid;
-    /**
-     *创建时间
-     */
-    private String createTime;
-    /**
-     *更新时间
-     */
-    private String updateTime;
 
 }

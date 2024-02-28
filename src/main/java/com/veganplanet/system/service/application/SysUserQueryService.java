@@ -1,6 +1,7 @@
 package com.veganplanet.system.service.application;
 
 import com.alibaba.fastjson.JSON;
+import com.veganplanet.common.core.request.model.AuthUserInfo;
 import com.veganplanet.common.core.response.Res;
 import com.veganplanet.common.core.response.ServiceStatus;
 import com.veganplanet.system.domain.entity.SysUser;
@@ -18,7 +19,7 @@ import java.util.concurrent.TimeUnit;
 
 
 /**
- * description
+ * 系统用户查询
  *
  * @date 2024/1/13 13:33
  */
@@ -55,7 +56,7 @@ public class SysUserQueryService {
         }
     }
 
-    public Res getSysUserInfo(SysUserVO sysUserVO) {
-        return Res.ok(sysUserService.getSysUserInfo(sysUserVO));
+    public Res getSysUserInfo(AuthUserInfo authUserInfo) {
+        return Res.ok(sysUserService.getSysUserByUserNo(authUserInfo.getUserNo()));
     }
 }

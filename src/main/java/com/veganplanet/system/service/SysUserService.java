@@ -13,4 +13,6 @@ import com.veganplanet.system.domain.vo.SysUserVO;
 public interface SysUserService extends IService<SysUser> {
 
     SysUser getSysUserInfo(SysUserVO sysUserVO);
+
+    SysUser getSysUserByUserNo(Long userNo);
 }

@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * 系统用户管理
+ * 系统用户登录
  *
  * @date 2024/1/15 15:36
  */
